@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>instruction</title>
+	<script type="text/javascript" src="./angular.min.js"></script>
+</head>
+<body>
+<!-- 指令 -->
+<!-- <div ng-app="" ng-init="firstName='Jone'">
+	<p>firstname:<input type="text" ng-model="firstName"></p>
+	<p>firstname:{{firstName}}</p>
+</div> -->
+<!-- 数据绑定 -->
+<!-- <div ng-app="" ng-init="a=1;b=5">
+	<h2>calculator</h2>
+	a:<input type="number" name="" ng-model="a">
+	b:<input type="number" name="" ng-model="b">
+	<p><b>count:</b>{{a*b}}</p>
+</div> -->
+<!-- 重复HTML -->
+<!-- <div ng-app="" ng-init="nums=[1,2,3,4]">
+	<p>use ng-repeat to repeat array</p>
+	<ul>
+		<li ng-repeat="x in nums">
+			{{x}}
+		</li>
+	</ul>	
+</div> -->
+<!-- <div ng-app="" ng-init="fruits=[
+{name:'apple',color:'red'},
+{name:'banana',color:'yellow'},
+{name:'oriange',color:'oriange'}]">
+<p>repeat object</p>
+<ul>
+	<li ng-repeat="fruit in fruits">
+		{{fruit.name + ', ' + fruit.color}}
+	</li>
+</ul>	
+</div> -->
+<!-- 自定义指令 -->
+<div ng-app="myApp">
+	<my-directive></my-directive>
+	<script>
+		var app=angular.module("myApp",[]);
+		app.directive('myDirective',function(){
+			// Runs during compile
+			return {
+				template: "<h1>自定义指令!</h1>"
+				};
+		});
+	</script>
+</div>
+</body>
+</html>
