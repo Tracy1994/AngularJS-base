@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>ng-model</title>
+
+	<script type="text/javascript" src="./angular.min.js"></script>
+	<style type="text/css">
+		input.ng-invalid{
+			background-color: lightblue;
+		}
+	</style>
+</head>
+<body>
+
+<form ng-app="" name="myForm">
+	<h4>当input里的值不合法时，背景颜色为浅蓝色</h4>
+	<!-- 输入验证 -->
+	Email:<input type="email" name="myAddress" ng-model="text">
+	<span ng-show="myForm.myAddress.$error.email">这不是一个合法的邮箱地址</span>
+	<p>在输入框中输入你的邮箱地址，如果不是一个合法的邮箱地址，会弹出提示信息。</p>
+
+	<hr>
+	<!-- 应用状态 -->
+	Email:<input type="email" name="myAddress1" ng-model='myText1' required>	
+	<p>编辑邮箱地址，查看状态变化</p>
+	<p>Valid:{{myForm.myAddress1.$valid}}(如果输入的值是合法的则为 true)</p>
+	<p>Dirty:{{myForm.myAddress1.$dirty}}(如果值改变则为 true)</p>
+	<p>Touched:{{myForm.myAddress1.$touched}}(如果通过触屏点击则为 true)</p>
+	<hr>
+	
+	Name:<input name="myName" ng-model="myText3" required>
+</form>
+
+</body>
+</html>
