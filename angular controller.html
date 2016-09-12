@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>AngularJS 控制器</title>
+	<script type="text/javascript" src="./angular.min.js"></script>
+</head>
+<body>
+<!-- <div ng-app="myApp" ng-controller="personCtrl">
+FirstName:<input type="text" ng-model="firsrName">	<br>
+LastName:<input type="text" ng-model="lastName"><br>
+Name:{{fullName()}}
+</div>
+<script type="text/javascript">
+	var app=angular.module('myApp',[]);
+	app.controller('personCtrl' , function($scope){
+		$scope.firsrName="john";
+		$scope.lastName="doe";
+		$scope.fullName=function(){
+			return $scope.firsrName + " " + $scope.lastName;
+		}
+	});
+</script> -->
+<div ng-app="myApp" ng-controller="nameCtrl">
+	<ul>
+		<li ng-repeat="x in names">
+			{{x.name + " ," + x.country}}
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+	angular.module('myApp',[]).controller("nameCtrl",function($scope) {
+		$scope.names=[
+			{name:"jane",country:"China"},
+			{name:"bili",country:"America"},
+			{name:"java",country:"japana"}
+		]
+		
+	});
+</script>
+</body>
+</html>
